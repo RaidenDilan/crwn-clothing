@@ -8,7 +8,7 @@ export const selectCollections = createSelector(
   (shop) => shop.collections
 );
 
-export const selectCollectionForPreview = createSelector(
+export const selectCollectionsForPreview = createSelector(
   [selectCollections],
   collections => Object.keys(collections).map(key => collections[key]) // Get all the keys and map over the array of keys to get the value of each key, which will give us an array of our items.
 );
