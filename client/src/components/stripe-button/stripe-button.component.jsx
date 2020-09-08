@@ -9,7 +9,7 @@ const StripeCheckoutButton = ({ price }) => {
   const onToken = token => {
     axios({
       url: 'payment',
-      method: 'POST',
+      method: 'post',
       data: {
         amount: priceForStripe,
         token: token
@@ -18,7 +18,7 @@ const StripeCheckoutButton = ({ price }) => {
       .then(res => alert('Payment Successful!'))
       .catch(err => {
         console.log('Payment error: ', JSON.parse(err));
-        alert('There was an issue with your payment. Please make sure you use the provided credit card methods');
+        alert('There was an issue with your payment. Please make sure you use the provided credit card');
       });
   };
 
@@ -28,7 +28,7 @@ const StripeCheckoutButton = ({ price }) => {
       name='CRWN Clothing'
       shippingAddress
       billingAddress
-      image='https://sendeyo.com/up/d/f3eb2117da'
+      image='https://svgshare.com/i/CUz.svg'
       description={ `Your total is £${ price }` }
       amount={ priceForStripe }
       panelLabel='Pay Now'
