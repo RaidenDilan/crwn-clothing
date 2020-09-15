@@ -50,10 +50,9 @@ export const CustomButtonContainer = styled.button`
   text-transform: uppercase;
   font-family: 'Open Sans Condensed';
   font-weight: bolder;
-  border: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  
+
   ${ getButtonStyles }
 `;
