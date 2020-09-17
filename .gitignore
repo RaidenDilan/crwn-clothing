@@ -21,13 +21,13 @@
 /client/src/.eslintrc.json
 
 /client/npm-debug.log*
+/client/yarn.lock*
 /client/yarn-debug.log*
 /client/yarn-error.log*
-/client/yarn.lock*
 
 .env
 
 npm-debug.log*
+yarn.lock*
 yarn-debug.log*
 yarn-error.log*
-yarn-lock.log*
