@@ -11,7 +11,15 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(compression())
+const shouldCompress = (req, res) => {
+  if (req.headers['x-no-compression']) return false
+  return compression.filter(req, res);
+}
+
+app.use(compression({
+  filter: shouldCompress,
+  level: 7
+}))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
