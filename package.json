@@ -2,8 +2,8 @@
   "name": "crwn-clothing-server",
   "version": "1.0.0",
   "engines": {
-    "node": "10.21.0",
-    "npm": "6.14.7"
+    "node": "11.10.1",
+    "npm": "6.14.8"
   },
   "scripts": {
     "client": "cd client && yarn start",
