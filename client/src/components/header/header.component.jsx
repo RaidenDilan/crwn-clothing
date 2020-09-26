@@ -10,31 +10,30 @@ import { signOutStart } from '../../redux/user/user.actions';
 
 import { ReactComponent as Logo } from '../../assets/crwn.svg';
 
-import { HeaderContainer, LogoContainer, OptionsContainer, OptionsLink } from './header.styles';
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionsContainer,
+  OptionLink
+} from './header.styles';
 
-const Header = ({ currentUser, hidden, signOutStart }) => (
+export const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to='/'>
       <Logo className='logo' />
     </LogoContainer>
     <OptionsContainer>
-      <OptionsLink to='/shop'>
-        SHOP
-      </OptionsLink>
-      <OptionsLink to='/shop'>
-        CONTACT
-      </OptionsLink>
-      {
-        currentUser
-          ? (
-            <OptionsLink
-              as='div'
-              onClick={ signOutStart }>SIGNOUT</OptionsLink>
-          )
-          : (
-            <OptionsLink to='/signin'>SIGNIN</OptionsLink>
-          )
-      }
+      <OptionLink to='/shop'>SHOP</OptionLink>
+      <OptionLink to='/shop'>CONTACT</OptionLink>
+      { currentUser ? (
+        <OptionLink
+          as='div'
+          onClick={ signOutStart }>
+          SIGN OUT
+        </OptionLink>
+      ) : (
+        <OptionLink to='/signin'>SIGN IN</OptionLink>
+      ) }
       <CartIcon />
     </OptionsContainer>
     { hidden ? null : <CartDropdown /> }
@@ -50,4 +49,7 @@ const mapDispatchToProps = dispatch => ({
   signOutStart: () => dispatch(signOutStart())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);

@@ -5,14 +5,13 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "axios": "^0.20.0",
-    "firebase": "^7.19.0",
+    "firebase": "^6.0.2",
     "lodash.memoize": "^4.1.2",
-    "node-sass": "^4.14.1",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "node-sass": "4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
     "react-stripe-checkout": "^2.6.3",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
@@ -23,7 +22,14 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
-    "react-scripts": "^3.0.0"
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "enzyme-to-json": "^3.5.0",
+    "react-scripts": "3.0.0",
+    "react-test-renderer": "16.8.6"
+  },
+  "resolutions": {
+    "babel-jest": "24.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,6 +38,11 @@
     "eject": "react-scripts eject",
     "lint": "eslint --fix .",
     "lint-check": "eslint ."
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "browserslist": {
     "production": [
