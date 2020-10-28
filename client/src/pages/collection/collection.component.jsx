@@ -15,11 +15,13 @@ export const CollectionPage = ({ collection }) => {
   const { title, items } = collection;
   return (
     <CollectionPageContainer>
-      <CollectionTitle>{title}</CollectionTitle>
+      <CollectionTitle>{ title }</CollectionTitle>
       <CollectionItemsContainer>
-        {items.map(item => (
-          <CollectionItem key={item.id} item={item} />
-        ))}
+        { items.map(item => (
+          <CollectionItem
+            key={ item.id }
+            item={ item } />
+        )) }
       </CollectionItemsContainer>
     </CollectionPageContainer>
   );
